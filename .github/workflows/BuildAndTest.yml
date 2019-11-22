@@ -8,9 +8,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Set version
-        run: swift package tools-version --set-current
       - name: Run Build
-        run: swift build -v
+        run: xcodebuild -scheme MathsAr build
       - name: Run tests
-        run: swift test -v
+        run: xcodebuild clean test -project MAthsAR.xcodeproj -scheme "MathsAr" -destination "name=iPhone 11,OS=13.2.2"
