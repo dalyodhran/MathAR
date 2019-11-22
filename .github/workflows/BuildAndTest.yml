@@ -9,6 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Build
-        run: xcodebuild -scheme "MathsAR" build
+        run: xcodebuild -scheme "MathsAR" -allowProvisioningUpdates build
       - name: Run tests
         run: xcodebuild clean test -project MathsAR.xcodeproj -scheme "MathsAR" -destination "name=iPhone X,OS=13.1"
